@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy Chars</title>
+</head>
+<body>
+    <center>
+        <h1 style="font-weight: lighter;">Here are Lists of Chars in:</h1>
+        <h3>Python :</h3>
+        <code id="pycode">chars = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E',<br>'F','G','H','I','J','K','L','M','N','O','P','Q','R','S',<br>'T','U','V','W','X','Y','Z','a','b','c','d','e','f','g',<br>'h','i','j','k','l','m','n','o','p','q','r','s','t','u',<br>'v','w','x','y','z']</code>
+        <div style="padding-top: 0.6%;"><button onclick="CopyMe1('chars = [0,1,2,3,4,5,6,7,8,9,\'A\',\'B\',\'C\',\'D\',\'E\',\'F\',\'G\',\'H\',\'I\',\'J\',\'K\',\'L\',\'M\',\'N\',\'O\',\'P\',\'Q\',\'R\',\'S\',\'T\',\'U\',\'V\',\'W\',\'X\',\'Y\',\'Z\',\'a\',\'b\',\'c\',\'d\',\'e\',\'f\',\'g\',\'h\',\'i\',\'j\',\'k\',\'l\',\'m\',\'n\',\'o\',\'p\',\'q\',\'r\',\'s\',\'t\',\'u\',\'v\',\'w\',\'x\',\'y\',\'z\']')" id="copy1" style="font-size: large; width: 10%; padding: 0.2%;">COPY</button></div>
+        <h3 id="Coppied1"style="font-weight:lighter; color: red; display: none;">Coppied the text !</h3>
+
+        <h3>Javascript :</h3>
+        <code>var chars = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E',<br>'F','G','H','I','J','K','L','M','N','O','P','Q','R','S',<br>'T','U','V','W','X','Y','Z','a','b','c','d','e','f','g',<br>'h','i','j','k','l','m','n','o','p','q','r','s','t','u',<br>'v','w','x','y','z']</code>
+        <div style="padding-top: 0.6%;"><button onclick="CopyMe2('var chars = [0,1,2,3,4,5,6,7,8,9,\'A\',\'B\',\'C\',\'D\',\'E\',\'F\',\'G\',\'H\',\'I\',\'J\',\'K\',\'L\',\'M\',\'N\',\'O\',\'P\',\'Q\',\'R\',\'S\',\'T\',\'U\',\'V\',\'W\',\'X\',\'Y\',\'Z\',\'a\',\'b\',\'c\',\'d\',\'e\',\'f\',\'g\',\'h\',\'i\',\'j\',\'k\',\'l\',\'m\',\'n\',\'o\',\'p\',\'q\',\'r\',\'s\',\'t\',\'u\',\'v\',\'w\',\'x\',\'y\',\'z\']')" id="copy2" style="font-size: large; width: 10%; padding: 0.2%;">COPY</button></div>
+        <h3 id="Coppied2"style="display: none;">Coppied the text !</h3>
+
+        <h3>C# :</h3>
+        <code>string[] chars = {"0","1","2","3","4","5","6","7","8","9",<br>"A","B","C","D","E","F","G","H","I","J","K","L","M","N",<br>"O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b",<br>"c","d","e","f","g","h","i","j","k","l","m","n","o","p",<br>"q","r","s","t","u","v","w","x","y","z"};</code>
+        <div style="padding-top: 0.6%;"><button onclick='CopyMe3("string[] chars = {\"0\",\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"7\",\"8\",\"9\",\"A\",\"B\",\"C\",\"D\",\"E\",\"F\",\"G\",\"H\",\"I\",\"J\",\"K\",\"L\",\"M\",\"N\",\"O\",\"P\",\"Q\",\"R\",\"S\",\"T\",\"U\",\"V\",\"W\",\"X\",\"Y\",\"Z\",\"a\",\"b\",\"c\",\"d\",\"e\",\"f\",\"g\",\"h\",\"i\",\"j\",\"k\",\"l\",\"m\",\"n\",\"o\",\"p\",\"q\",\"r\",\"s\",\"t\",\"u\",\"v\",\"w\",\"x\",\"y\",\"z\"}")' id="copy3" style="font-size: large; width: 10%; padding: 0.2%;">COPY</button></div>
+        <h3 id="Coppied3"style="font-weight:lighter; color: red; display: none;">Coppied the text !</h3>
+        <h2 style="padding-bottom: 10%;">Just click "COPY" Button</h2>
+    </center>
+</body>
+</html>
+<style>
+html{
+    background-image: linear-gradient(140deg, #EADEDB 0%, #BC70A4 50%, #BFD641 75%);
+}
+code {
+  font-family: Consolas,"courier new";
+  color: crimson;
+  background-color: #b5b2b2;
+  padding: 2px;
+  font-size: 105%;
+}
+#copy1{
+    border-radius: 1%;
+}
+#copy2{
+    border-radius: 1%;
+}
+#copy3{
+    border-radius: 1%;
+}
+#copy:hover{
+    background: rgb(172, 170, 170);
+}
+</style>
+
+<script>
+function CopyMe1(TextToCopy) {
+  var TempText = document.createElement("input");
+  TempText.value = TextToCopy;
+  document.body.appendChild(TempText);
+  TempText.select();
+  
+  document.execCommand("copy");
+  document.body.removeChild(TempText);
+
+  var Coppied1 = document.getElementById('Coppied1');
+  Coppied1.style.cssText = 'font-weight:lighter; color: red; display: block;'
+  setTimeout(() => {  Coppied1.style.cssText = 'display: none;' }, 800);
+}
+
+
+function CopyMe2(TextToCopy) {
+  var TempText = document.createElement("input");
+  TempText.value = TextToCopy;
+  document.body.appendChild(TempText);
+  TempText.select();
+  
+  document.execCommand("copy");
+  document.body.removeChild(TempText);
+
+  var Coppied2 = document.getElementById('Coppied2');
+  Coppied2.style.cssText = 'font-weight:lighter; color: red; display: block;'
+  setTimeout(() => {  Coppied2.style.cssText = 'display: none;' }, 800);
+}
+
+function CopyMe3(TextToCopy) {
+  var TempText = document.createElement("input");
+  TempText.value = TextToCopy;
+  document.body.appendChild(TempText);
+  TempText.select();
+  
+  document.execCommand("copy");
+  document.body.removeChild(TempText);
+
+  var Coppied3 = document.getElementById('Coppied3');
+  Coppied3.style.cssText = 'font-weight:lighter; color: red; display: block;'
+  setTimeout(() => {  Coppied3.style.cssText = 'display: none;' }, 800);
+}
+</script>
